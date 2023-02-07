@@ -7,18 +7,6 @@ import Tasks from "./Tasks";
 // -You have 2 arrays. You should create a new component TASKS, where you will render these arrays.
 // -Don't forget to assign types to our data.
 
-export type DataType = {
-    title: string
-    tasks: Array<TasksType>
-    students: Array<string>
-}
-
-export type TasksType = {
-    taskId: number
-    title: string
-    isDone: boolean
-}
-
 function App() {
     const data1 = {
         title: "What to do",
@@ -136,7 +124,7 @@ function App() {
 
     return (
         <div className="App">
-            <Tasks data={data1} />
+            <Tasks data={data1}/>
             <Tasks data={data2}/>
         </div>
     );

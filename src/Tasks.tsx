@@ -1,23 +1,37 @@
 import React from "react";
-import {DataType} from "./App";
 
+type DataType = {
+    title: string
+    tasks: Array<TasksType>
+    students: Array<string>
+}
 
-export type TasksPropsType = {
+type TasksType = {
+    taskId: number
+    title: string
+    isDone: boolean
+}
+
+type TasksPropsType = {
     data: DataType
 }
 
 export const Tasks = (props: TasksPropsType) => {
     return (
         <div>
-            <div>{props.data.title}</div>
-            <div>{props.data.tasks.map((el) => {
-                return <div>{el.taskId} {el.title} {el.isDone}</div>
-            })}</div>
+            <h1>{props.data.title}</h1>
+            <ul>{props.data.tasks.map((el) => {
+                return (
+                    <li>
+                        <span>{el.taskId}</span>
+                        <span>{el.title}</span>
+                        <span>{el.isDone}</span>
+                    </li>)
+            })}</ul>
             <div>{props.data.students.map((el) => {
-                return <div>{el}</div>
+                return <li>{el}</li>
             })}</div>
         </div>
-
     )
 }
 
